@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="row g-3">
+                <h2>Img upload form</h2>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="" class="form-label">Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="name">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="" class="form-label">Image upload</label>
+                    <input type="file" name="img" id="" class="form-control" (change)="onFileSelected($event)">
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <label for="" class="form-label">Description</label>
+                    <textarea name="description" id="" cols="30" rows="1" class="form-control" [(ngModel)]="description"></textarea>
+                </div>
+                <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <input type="submit" value="submit" (click)="submit()" class="btn btn-success">
+                </div>
+            </div>
+            <div  class="row g-3 mt-3">
+                <div  *ngFor="let i of itemData" class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                    <div class="card" >
+                        <img [src]="i.picByte" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{i.name}}</h5>
+                          <p class="card-text">{{i.description}}</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
